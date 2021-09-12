@@ -8,8 +8,31 @@
     
     html{                               
         font-size: 62.5%;         
-        box-sizing: border-box;      
+        box-sizing: border-box;   
+        z-index: 5;   
     }                        
+
+    h1::after{
+        transition: 0.5s;
+        content: "";
+        background: linear-gradient(to right, #194042 , #39dde9,#194042);
+        background-size: 200%;
+        position: relative;
+        display: block;
+        width: 50%;
+        left: 25%;
+        height: 5px;
+        border-radius: 10px;
+
+    }
+
+
+
+    h1:hover::after{
+            
+        background-position: right;
+
+    }
 
 
 *, *:before, *:after {
@@ -23,7 +46,7 @@
 
     #H2contacto{
         font-size: 4rem;
-
+        z-index: 0;
         text-align: center;
         font-family: var(--fontFamilyStandar);
     }   
@@ -104,33 +127,26 @@
         height: 100%;
         width: 100%;
         position: relative;
+        display: flex;
 
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
     }
 
     .seccionConImagenDeFondoConjunto h2{
         margin: 0;
-        height: 33%;
     }
     .seccionConImagenDeFondoConjunto h2 span{
         font-size: 4vw;
-        position: relative;
-        top: 25%;
+
     }
 
     .seccionConImagenDeFondoConjuntoTextAndVectorImage{
         width: 100%;
-        height: 33%;
 
     }
-    .svgSeccion{
-        width: 50%;
 
-    }
-    .localizacionSeccion{
-        width: 50%;
-
-
-    }
 
 
 
@@ -138,7 +154,7 @@
 
 
     .seccionConImagenDeFondoConjuntoTextAndVectorImage span{
-        font-size: 3.5rem;
+        font-size: 2.5vw;
         position: relative;
         bottom: 1rem;
     }
@@ -153,15 +169,9 @@
 
     }
 
-    .seccionConImagenDeFondoContactar{
-        text-align: center;
-        display: inline-block;
-  
-    }
+
     .seccionConImagenDeFondoContactar a{
-        display: block;
         text-decoration: none;
-        width: 7em;
 
     }
 
@@ -170,7 +180,7 @@
         background-color: #1c959e;
         text-decoration: none;
         color: white;
-
+        width: 20rem;
     }
 
     .svgYcontactar:hover{
@@ -191,11 +201,11 @@
     }
 
     @keyframes example {
-        0%   {transform: rotate(5deg);}
+        0%   {transform: rotate(3deg);}
         20%  {transform: rotate(0deg);}
-        40%  {transform: rotate(-5deg);}
+        40%  {transform: rotate(-3deg);}
         60%  {transform: rotate(0deg);}
-        80%  {transform: rotate(5deg);}
+        80%  {transform: rotate(3deg);}
         100% {transform: rotate(0deg);}
       }
 
@@ -225,6 +235,7 @@
 
 
     main {
+        background-color: white;
         position: relative;
         text-align: center;
         width: 75%;
@@ -261,7 +272,6 @@
         text-align: justify;
         text-justify: distribute;
         text-align-last: left;
-        font-weight: bold;
         width: auto;
         margin: 1em;
 
@@ -269,14 +279,22 @@
 
 
 
-    main div{
-        width: 30%;
-        display: inline-block;
+
+
+
+    #containerDivsTray{
+        width: 100%;
+        display: grid;
 
     }
 
+    .divsTrayectoria{
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
 
-
+    }
 
 
     .divsTrayectoria:hover{
@@ -286,13 +304,16 @@
 
         
     }
+
+
     .divsTrayectoria:hover .circulo{
-        animation:ejemplo;
+        animation-name:focusIn;
         animation-duration: 1s;
+        
     }
-    @keyframes ejemplo {
-        0%   {transform: rotate(60deg);}
-        100% {transform: rotate(360deg);}
+    @keyframes focusIn {
+        from   {transform: rotate(0deg);}
+        to {transform: rotate(360deg);}
       }
 
 
@@ -307,6 +328,8 @@
 
 
     .circulocontainer{
+        display: flex;
+        justify-content: center;
         width: 100%;
         margin: 0;
     }
@@ -330,22 +353,25 @@
         width: 100%;
         display: flex;
         justify-content: center;
+        position: relative;
 
     }
 
     .seccionContacto{
+        overflow: hidden;
         font-family: var(--fontFamilyStandar);
         box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.356);
         width: 50%;
         border-radius: 1em;
         background-image: url("/img/correo2.jpg");
                 background-size: cover;
-
+        z-index: 15;
         
     }
-
+    
 
     #innerContainerContacto{
+        position: relative;
         background-image: linear-gradient(to right, rgba(0, 0, 0, 0.623) , rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0.747));
         border-radius: 1em;
         height: 100%;
@@ -353,7 +379,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-
+        z-index: 0;
     }
 
     .seccionContacto h2{
@@ -372,7 +398,10 @@
         height: 100%;
         border: 0;
         text-align: center;
-
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
     }
 
     .seccionContacto fieldset div{
@@ -495,13 +524,11 @@
     #mensaje{
         font-size: 1vw;
         width: 100%;
-        height: 5vw;
         text-align: center;
     }
 
     #mensaje label{
         display: block;
-        height: 20%;
         text-align: center;
         margin: 0.5vw;
 
@@ -530,7 +557,8 @@
     #spanSummit{
         color: white;
         font-family: var(--fontFamilyStandar);
-        font-size:0.7vw;
+        font-size:1rem;
+        display: block;
     }
 
     footer{
@@ -554,6 +582,22 @@
         font-family: var(--fontFamilyStandar);
       }
 
+      input:focus{
+        transition: 0.15s;
+
+        outline: 3px solid #2ca7e0d8;
+
+      }
+
+      textarea:focus{
+        transition: 0.15s;
+
+        outline: 3px solid #258ab9d8;
+
+      }
+
+
+
 
       input[type=submit]:hover{
 
@@ -562,17 +606,84 @@
 
       }
 
+   
 
-      @media screen and (max-width:1000px) {
-        .divsTrayectoria{
-            display:block;
-            padding: auto;
-            width: 80%;
-            margin:auto;
+
+    #blancofondo{
+        background-color: white;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+    }
+
+    .insidewrapper{
+        height: 100%;
+        width: 100%;
+        z-index: 19;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        font-size: 3em;
+        text-align: center;
+        color: rgb(33, 180, 33);
+
+        justify-content: space-around;
+        background-color: rgba(0, 0, 0, 0.733);
+        transform: translateX(100%);
+
+    }
+    #wrapper{
+        position: absolute;
+        display: inline-block;
+        height: 100%;
+        width: 50%;
+        overflow-x: hidden;
+        border-radius: inherit;
+
+        }
+
+        .alaizquierda{
+            animation: animacionBoton 2s 1;
+        }
+
+
+
+    @keyframes animacionBoton {
+        0%   {transform: translateX(100%);}
+        25%  {transform: translateX(0%);}
+        50%  {transform: translateX(0%);}
+        75%  {transform: translateX(0%);}
+        100%  {transform: translateX(100%);}
+      }
+
+       /*
+    ////////////////////////////////////////
+    ////                                ////
+    ////         MEDIA QUERIES          ////
+    ////                                ////
+    ////////////////////////////////////////
+    
+    */
+
+      /* Cambia el estilo de los divs de la trayectoria para que se vean de 1 en 1 de arriba a abajo */
+
+      @media screen and (min-width:1100px) {
+        #containerDivsTray{
+           grid-template-columns: 1fr 1fr 1fr; 
       }
     }
+
+
+
+    /* Cambia el estilo del formulario para poner todos los inputs en vertical */
       
     @media screen and (max-width:700px) {
+
+        #wrapper{
+            width: 80%;
+        }
+
 
         #containerNombreAsunto{
             flex-direction: column;
@@ -618,7 +729,7 @@
 
 
         #mensaje label{
-            display: inline;
+            display: block;
             font-size: 15px;
             }
             #mensaje textarea{
@@ -633,7 +744,13 @@
             width: 80%;
         }
         
+
+
+        
     }
+
+
+    /* Cambia el estilo del nav para ponerlo en vertical */
 
     @media screen and (max-width:584px) {
         .navbar{
@@ -649,11 +766,22 @@
     }
 
 
+    /* Cambia el estilo del icono del localización y el texto*/
+
     @media screen and (max-width:500px) {
         .seccionConImagenDeFondoConjuntoTextAndVectorImage span{
             display: block;
             bottom: 0%;
             top: 10%;
-            font-size: 3rem;
+            font-size: 2rem;
         }
+    }
+    
+    /* Cambia el tamaño de la fuente del texto TRAYECTORIA */
+
+    @media screen and (max-width:500px){
+        #trayectoria{
+            font-size: 2rem;
+        }
+
     }

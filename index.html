@@ -3,6 +3,7 @@
    <head>
       <meta charset="UTF-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel="stylesheet" href="css/normalize.css">
       <link rel="stylesheet" href="css/index.css">
@@ -50,11 +51,12 @@
          </div>
       </section>
       <main>
-         <h2>Trayectoria</h2>
+         <h2 id="trayectoria">Trayectoria</h2>
+      <div id="containerDivsTray">
          <div class="divsTrayectoria" >
             <h3>Ingeniería informática</h3>
             <div class="circulocontainer">
-               <div class="circulo">
+               <div class="circulo" >
                   <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-book" width="80" height="80" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                      <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
@@ -62,6 +64,23 @@
                      <line x1="3" y1="6" x2="3" y2="19" />
                      <line x1="12" y1="6" x2="12" y2="19" />
                      <line x1="21" y1="6" x2="21" y2="19" />
+                  </svg>
+               </div>
+            </div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam aliquid voluptas praesentium. Neque minus doloribus debitis eos beatae amet, esse explicabo, dolor corporis impedit, fugiat maiores cum enim illum. Fugiat.</p>
+         </div>
+
+         <div class="divsTrayectoria">
+            <h3>Idiomas</h3>
+            <div class="circulocontainer">
+               <div class="circulo">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-world" width="80" height="80" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                     <circle cx="12" cy="12" r="9" />
+                     <line x1="3.6" y1="9" x2="20.4" y2="9" />
+                     <line x1="3.6" y1="15" x2="20.4" y2="15" />
+                     <path d="M11.5 3a17 17 0 0 0 0 18" />
+                     <path d="M12.5 3a17 17 0 0 1 0 18" />
                   </svg>
                </div>
             </div>
@@ -85,33 +104,31 @@
             </div>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam aliquid voluptas praesentium. Neque minus doloribus debitis eos beatae amet, esse explicabo, dolor corporis impedit, fugiat maiores cum enim illum. Fugiat.</p>
          </div>
-         <div class="divsTrayectoria">
-            <h3>Idiomas</h3>
-            <div class="circulocontainer">
-               <div class="circulo">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-world" width="80" height="80" viewBox="0 0 24 24" stroke-width="1.5" stroke="black" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                     <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                     <circle cx="12" cy="12" r="9" />
-                     <line x1="3.6" y1="9" x2="20.4" y2="9" />
-                     <line x1="3.6" y1="15" x2="20.4" y2="15" />
-                     <path d="M11.5 3a17 17 0 0 0 0 18" />
-                     <path d="M12.5 3a17 17 0 0 1 0 18" />
-                  </svg>
-               </div>
-            </div>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam aliquid voluptas praesentium. Neque minus doloribus debitis eos beatae amet, esse explicabo, dolor corporis impedit, fugiat maiores cum enim illum. Fugiat.</p>
-         </div>
+
+         
+      </div>
          <br>
       </main>
       <br>
       <div>
    </div>
    <div class="cointainerSeccioncontacto">
+      <div id="blancofondo"></div>
+
       <section class="seccionContacto">
+         <div id="wrapper">
+         <div class="insidewrapper" id="insidewrapper">
+            <p>Mensaje Enviado</p>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+             </svg>
+         </div>
+         </div>
          <div id="innerContainerContacto">
+
             <h2 id="H2contacto">Contacto</h2>
 
-            <form id="formContacto" method="POST" action="form.php">
+            <form id="formContacto" method="POST" action="#">
                <fieldset id="fieldset">
                   <div id="containerNombreAsunto">
                      <div id="nombre">
@@ -141,15 +158,34 @@
                      <input id="summit" type="submit" value="Enviar">
                   </div>
                   <div id="divSpanContacto">
-                     <span id="spanSummit">Los campos con un * son obligatorios</span>
+                     <p id="spanSummit">Los campos con un * son obligatorios</p>
                   </div>
                </fieldset>
             </form>
-         </div>
+
+      </div>
       </section>
    </div>
       <footer>
-         <p>Todos los derechos reservados - José Guisado Simón</p>
+         <p id="test">Todos los derechos reservados - José Guisado Simón</p>
       </footer>
    </body>
 </html>
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+element = document.getElementById("test");
+element2 = document.getElementById("insidewrapper");
+
+element.addEventListener("click", function(e) {
+  e.preventDefault;
+  element2.classList.remove("alaizquierda");
+  void element.offsetWidth;
+  element2.classList.add("alaizquierda");
+}, false);
+</script>
